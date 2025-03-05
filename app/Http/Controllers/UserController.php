@@ -36,4 +36,16 @@ Class UserController extends Controller {
         
         return $this->successResponse($users);
     }
+
+    public function add(Request $request ){
+        $rules = [
+            'username' => 'required|max:20',
+            'password' => 'required|max:20',
+            'gender' => 'rewuired|in:Male,Female',
+        ];
+
+        $this->validate($request,$rules);
+        $user = User::create($request->all());
+        return $this->successResponse($user, Response::HTTP_CREATED);
+    }
 }
