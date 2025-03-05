@@ -25,6 +25,8 @@ Class UserController extends Controller {
         ->select("Select * from tbluser");
 
         return response()->json($users, 200);
+
+        return $this->successResponse($users);
     }
 
     public function index()
