@@ -26,6 +26,7 @@ Class UserController extends Controller {
 
         return response()->json($users, 200);
 
+        //return $this->successResponse($users);
         return $this->successResponse($users);
     }
 
