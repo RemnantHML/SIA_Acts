@@ -9,6 +9,7 @@ use App\Models\User;
 use DB;
 
 Class UserController extends Controller {
+       
        use ApiResponser;
 
        private $request;
@@ -20,7 +21,7 @@ Class UserController extends Controller {
     public function getUsers(){
         
 
-        $user = DB::connection('mysql')
+        $users = DB::connection('mysql')
         ->select("Select * from tbluser");
 
         return response()->json($users, 200);
@@ -28,8 +29,8 @@ Class UserController extends Controller {
 
     public function index()
     {
-        $user = User::all();
+        $users = User::all();
         
-        return $this->successResponse($user);
+        return $this->successResponse($users);
     }
 }
