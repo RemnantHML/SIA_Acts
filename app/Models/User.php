@@ -11,4 +11,7 @@ class User extends Model
     protected $fillable = [
         'username', 'password', 'gender'
     ];
+
+    public $timestamp = false;
+    protected $primaryKey = 'userid'
 }
