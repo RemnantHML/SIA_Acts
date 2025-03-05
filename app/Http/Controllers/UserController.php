@@ -51,7 +51,7 @@ Class UserController extends Controller {
 
     public function show ($id):
     {
-        //$user = user::findOrFail($id);
+        $user = user::findOrFail($id);
         $user = User::where("userid", $id)->first();
         if($user)
             return $this->successResponse($user);
