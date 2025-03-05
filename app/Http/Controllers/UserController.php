@@ -49,14 +49,15 @@ Class UserController extends Controller {
         return $this->successResponse($user, Response::HTTP_CREATED);
     }
 
-    public function show ($id):
+    public function show($id)
     {
-        //$user = user::findOrFail($id):
-        $user = User::where("userid", $id)->first();
-        if($user)
-            return $this->successResponse($user);
-    }
-    {
+    $user = User::where('userid', $id)->first();
+
+    if ($user) {
+        return $this->successResponse($user);
+    } else {
+        
         return $this->errorResponse('User ID Does Not Exist', Response::HTTP_NOT_FOUND);
     }
+}
 }
