@@ -12,6 +12,6 @@ class User extends Model
         'username', 'password', 'gender'
     ];
 
-    public $timestamp = false;
+    public $timestamps = false;
     protected $primaryKey = 'userid';
 }
