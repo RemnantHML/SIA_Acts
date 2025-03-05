@@ -28,8 +28,8 @@ Class UserController extends Controller {
 
     public function index()
     {
-        $users = User::all();
+        $user = User::all();
         
-        return $this->succesResponse($user);
+        return $this->successResponse($user);
     }
 }
