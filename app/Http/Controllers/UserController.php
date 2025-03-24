@@ -81,7 +81,7 @@ Class UserController extends Controller {
 
         $user->fill($request->all());
 
-        if ($user->idClean()){
+        if ($user->isDirty()){
             return $this->errorResponse('At least one value must change', Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
@@ -93,6 +93,7 @@ Class UserController extends Controller {
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return $this->errorResponse('User ID Does Not Exist', Response::HTTP_NOT_FOUND);
+        return $this->successResponse(['message' => 'User deleted successfully']);
+
     }
 }
