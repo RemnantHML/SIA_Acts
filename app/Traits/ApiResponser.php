@@ -30,4 +30,3 @@ trait ApiResponser
         return response()->json(['error' => $message, 'site' => 1, 'code' => $code], $code);
     }
 }
-AAAADRRRIANNNN
