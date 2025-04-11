@@ -69,7 +69,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($exception instanceof ValidationException) {
-            $errors = $exception->validator->errors()->getMessages();
+            $error = $exception->validator->errors()->getMessages();
 
             return $this->errorResponse($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
         }
